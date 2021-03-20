@@ -19,18 +19,13 @@ using namespace std;
 int main() { 
 	int sockfd, n;
     socklen_t len;
-	char buffer[1024] = "hello";
+	char buffer[1024];
 	struct sockaddr_in servaddr;
     buffer[1023] = '\0';
 
 	// Create a UDP socket
 	// Notice the use of SOCK_DGRAM for UDP packets
 	sockfd = socket(AF_INET, SOCK_DGRAM, 0);
-
-    if (sockfd < 0){
-        printf("failed to create socket");
-        exit(1);
-    }
 
 	memset(&servaddr, 0, sizeof(servaddr)); 
  
